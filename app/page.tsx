@@ -1,5 +1,6 @@
 "use client"
 import CategoryList from "@/components/Home/CategoryList";
+import RangeSelect from "@/components/Home/RangeSelect";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -15,12 +16,12 @@ export default function Home() {
     }
   }, [sessoion]); // eslint-disable-line
   return (
-    <div className="grid grid-cols-4 h-screen">
+    <div className="grid grid-cols-1 md:grid-cols-4 h-screen">
       <div className="p-3">
         <CategoryList/>
+        <RangeSelect/>
       </div>
       <div className="col-span-3">1</div>
-      <div></div>
     </div>
   );
 }
