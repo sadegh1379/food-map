@@ -3,15 +3,17 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useSession, signIn, signOut } from "next-auth/react"
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const { data: session } = useSession()
+  const router = useRouter()
   useEffect(() => {
     console.log('session:', session)
     if(session?.user){
-      
+      router.push('/')
     }
-  }, [session])
+  }, [session]) // eslint-disable-line
   return (
     <div className="flex flex-col items-center mt-[10%] gap-5">
       <Image src="/logo.png" alt="logo" width={100} height={100} />
