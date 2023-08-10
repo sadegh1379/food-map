@@ -1,4 +1,17 @@
-const CategoryListData=[
+export interface ICategory {
+    id: number,
+    name: string
+    value: string,
+    icon: string
+}
+
+export interface IRating {
+    id: number,
+    name: number,
+    icon: string
+}
+
+const CategoryListData: ICategory[] =[
     {
         id:1,
         name:'Indian',
@@ -33,7 +46,7 @@ const CategoryListData=[
   
 ]
 
-const ratingList=[
+const ratingList: IRating[] =[
     {
         id:1,
         name:1,

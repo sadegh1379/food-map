@@ -1,4 +1,5 @@
 "use client"
+import CategoryList from "@/components/Home/CategoryList";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -14,8 +15,12 @@ export default function Home() {
     }
   }, [sessoion]); // eslint-disable-line
   return (
-    <div>
-      <h2 className="text-red-300">home</h2>
+    <div className="grid grid-cols-4 h-screen">
+      <div className="p-3">
+        <CategoryList/>
+      </div>
+      <div className="col-span-3">1</div>
+      <div></div>
     </div>
   );
 }

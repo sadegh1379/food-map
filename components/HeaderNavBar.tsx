@@ -6,8 +6,8 @@ import Image from "next/image";
 function HeaderNavBar() {
   const { data: sessoion } = useSession();
   return (
-    <div className="flex items-center justify-between p-2">
-      <div className="flex items-center gap-3">
+    <div className="flex items-center justify-between p-3">
+      <div className="flex items-center gap-5">
         <Image src={"/logo.png"} width={40} height={40} alt="logo" />
         <h2 className="cursor-pointer">Home</h2>
         <h2 className="cursor-pointer">Favorite</h2>
