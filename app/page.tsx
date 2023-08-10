@@ -1,6 +1,8 @@
 "use client"
 import CategoryList from "@/components/Home/CategoryList";
+import GoogleMapView from "@/components/Home/GoogleMapView";
 import RangeSelect from "@/components/Home/RangeSelect";
+import RatingSelect from "@/components/Home/RatingSelect";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -20,8 +22,11 @@ export default function Home() {
       <div className="p-3">
         <CategoryList/>
         <RangeSelect/>
+        <RatingSelect/>
       </div>
-      <div className="col-span-3">1</div>
+      <div className="col-span-3">
+        <GoogleMapView/>
+      </div>
     </div>
   );
 }
