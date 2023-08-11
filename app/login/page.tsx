@@ -9,7 +9,7 @@ export default function Login() {
   const { data: session } = useSession()
   const router = useRouter()
   useEffect(() => {
-    console.log('session:', session)
+    // console.log('session:', session)
     if(session?.user){
       router.push('/')
     }

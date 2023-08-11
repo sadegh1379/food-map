@@ -9,7 +9,7 @@ const containerStyle = {
 
 function GoogleMapView() {
   const locationContext  = useContext(userLocationContext); 
-  console.log('userLocation', locationContext?.userLocation);
+  // console.log('userLocation', locationContext?.userLocation);
   return (
     <div>
       <LoadScript
