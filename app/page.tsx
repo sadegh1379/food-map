@@ -24,7 +24,7 @@ export default function Home() {
         <RangeSelect/>
         <RatingSelect/>
       </div>
-      <div className="col-span-3">
+      <div className="col-span-3 p-3">
         <GoogleMapView/>
       </div>
     </div>

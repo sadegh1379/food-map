@@ -11,7 +11,6 @@ function RatingSelect() {
       setSelectedRating(selectedRating.filter(r => r !== item))
     }
   }
-  console.log('selected rating', selectedRating)
   return (
     <div className="pt-2">
       <h2 className="font-bold">Select Rating</h2>
