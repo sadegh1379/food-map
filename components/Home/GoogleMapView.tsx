@@ -1,4 +1,5 @@
 import { userLocationContext } from "@/context/userLocationContext";
+import { BusinessType } from "@/types";
 import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 import { useContext } from "react";
 
@@ -7,9 +8,11 @@ const containerStyle = {
   height: "70vh",
 };
 
-function GoogleMapView() {
+function GoogleMapView({ businessList }: { businessList: BusinessType[] }) {
   const locationContext  = useContext(userLocationContext); 
   // console.log('userLocation', locationContext?.userLocation);
+  console.log('businessList:', businessList)
+  console.log('locationContext?.userLocation:', locationContext?.userLocation)
   return (
     <div>
       <LoadScript
@@ -28,6 +31,23 @@ function GoogleMapView() {
               }
            }}
           />
+          {businessList.map(({ lat, lng }, index) => (
+            <MarkerF
+            key={index}
+            position={{
+              lat,
+               lng
+            }}
+          //   icon={{ 
+          //     url: '/user-location.png',
+          //     scaledSize: {
+          //       width: 50,
+          //       height: 50,
+          //       equals: () => true
+          //     }
+          //  }}
+          />
+          ))}
         </GoogleMap>
       </LoadScript>
     </div>

@@ -27,6 +27,7 @@ export default function Home() {
       setBusinessList(res.data.products);
     });
   }, []);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 h-screen">
       <div className="p-3 flex flex-col gap-6">
@@ -35,7 +36,7 @@ export default function Home() {
         <RatingSelect />
       </div>
       <div className="col-span-3 p-3">
-        <GoogleMapView />
+        <GoogleMapView businessList={businessList}/>
         <div className="relative md:absolute bottom-36 md:bottom-3 w-[90%] md:w-[70%] ml-5 md:ml-6">
           <BusinessView businessList={businessList} />
         </div>
