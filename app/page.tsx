@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import CategoryList from "@/components/Home/CategoryList";
 import GoogleMapView from "@/components/Home/GoogleMapView";
 import RangeSelect from "@/components/Home/RangeSelect";
@@ -8,10 +8,10 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import BusinessView from '@/components/Home/BusinessView';
+import BusinessView from "@/components/Home/BusinessView";
 
 export default function Home() {
-  const [businessList, setBusinessList] = useState<BusinessType[] | []>([])
+  const [businessList, setBusinessList] = useState<BusinessType[] | []>([]);
   const { data: sessoion } = useSession();
   const router = useRouter();
 
@@ -23,20 +23,22 @@ export default function Home() {
   }, [sessoion]); // eslint-disable-line
 
   useEffect(() => {
-    axios.get('/api/google-place').then(res => {
-      setBusinessList(res.data.products)
-    })
-  }, [])
+    axios.get("/api/google-place").then((res) => {
+      setBusinessList(res.data.products);
+    });
+  }, []);
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 h-screen">
-      <div className="p-3 flex flex-col gap-10">
-        <CategoryList/>
-        <RangeSelect/>
-        <RatingSelect/>
+      <div className="p-3 flex flex-col gap-6">
+        <CategoryList />
+        <RangeSelect />
+        <RatingSelect />
       </div>
       <div className="col-span-3 p-3">
         <GoogleMapView />
-        <BusinessView businessList={businessList}/>
+        <div className="relative md:absolute bottom-36 md:bottom-3 w-[90%] md:w-[70%] ml-5 md:ml-6">
+          <BusinessView businessList={businessList} />
+        </div>
       </div>
     </div>
   );
